@@ -18,6 +18,8 @@ class UrlFactory extends Factory
     {
         return [
             'original_url' => $this->faker->url(),
+            'short_url' => $this->faker->url(),
+            'click_count' => 0,
         ];
     }
 }
