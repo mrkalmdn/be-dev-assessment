@@ -19,4 +19,9 @@ class Url extends Model
     protected $casts = [
         'click_count' => 'integer',
     ];
+
+    public function getRouteKeyName(): string
+    {
+        return 'short_url';
+    }
 }
