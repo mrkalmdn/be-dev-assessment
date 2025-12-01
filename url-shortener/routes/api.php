@@ -9,5 +9,6 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::apiResource('urls', UrlController::class)->only(['store', 'show']);
+Route::get('{url}', [UrlController::class, 'show'])->name('urls.show');
+Route::post('shorten', [UrlController::class, 'store'])->name('urls.store');
 Route::get('analytics/{url}', UrlAnalyticController::class)->name('analytics.show');
